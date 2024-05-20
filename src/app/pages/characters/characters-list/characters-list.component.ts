@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { CharactersService } from '../characters.service'; // ajuste o caminho conforme necessário
-import { PaginationCharacter } from '../characters'; // ajuste o caminho conforme necessário
+import { CharactersService } from '../characters.service';
+import { Characters, PaginationCharacter } from '../characters';
 
 @Component({
   selector: 'app-characters-list',
   templateUrl: './characters-list.component.html',
-  styleUrls: ['./characters-list.component.css'] // Corrigido: styleUrl -> styleUrls
+  styleUrls: ['./characters-list.component.css']
 })
 export class CharactersListComponent implements OnInit {
-  characters: PaginationCharacter | undefined; // Usando a interface PaginationCharacter
+  characters: Characters[]=[];
 
-  constructor(private charactersService: CharactersService) {}
+  constructor(private charactersService: CharactersService) { }
 
   ngOnInit(): void {
     this.fetchCharacters();
@@ -18,8 +18,8 @@ export class CharactersListComponent implements OnInit {
 
   fetchCharacters(): void {
     this.charactersService.getCharacters().subscribe(
-      (data: PaginationCharacter) => {
-        this.characters = data;
+      (data:PaginationCharacter) => {
+        this.characters = data.items;
       },
       (error) => {
         console.error('Erro ao buscar personagens', error);
@@ -27,3 +27,5 @@ export class CharactersListComponent implements OnInit {
     );
   }
 }
+
+

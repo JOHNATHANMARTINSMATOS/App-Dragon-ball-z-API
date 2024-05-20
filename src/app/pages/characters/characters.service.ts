@@ -1,17 +1,18 @@
-import { PaginationCharacter } from './characters';
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { PaginationCharacter } from './characters';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class CharactersService {
+  private apiUrl = 'https://dragonball-api.com/api/characters?limit=5';
 
-
-  private apiUrl = "https://dragonball-api.com/api/characters?limit=5";
-
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getCharacters(): Observable<PaginationCharacter> {
     return this.http.get<PaginationCharacter>(this.apiUrl);
   }
 }
+

@@ -1,20 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module'; // Importe o módulo de roteamento principal
 import { AppComponent } from './app.component';
-import { PlanetsListComponent } from './pages/planets/planets-list/planets-list.component';
-import { HttpClientModule } from '@angular/common/http';
+import { CharactersModule } from './pages/characters/characters.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PlanetsListComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    CharactersModule
   ],
   providers: [],
   bootstrap: [AppComponent]
