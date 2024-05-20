@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module'; // Importe o módulo de roteamento principal
+
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CharactersModule } from './pages/characters/characters.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,7 @@ import { CharactersModule } from './pages/characters/characters.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CharactersModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

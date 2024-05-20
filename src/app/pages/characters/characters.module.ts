@@ -5,18 +5,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { CharactersRoutingModule } from './characters-routing.module';
 import { CharactersListComponent } from './characters-list/characters-list.component';
 import { CharactersService } from './characters.service';
+import { CharactersDetailComponent } from './characters-detail/characters-detail.component';
 
 @NgModule({
   declarations: [
-    CharactersListComponent
+    CharactersListComponent,
+    CharactersDetailComponent
   ],
   imports: [
     CommonModule,
     CharactersRoutingModule,
     HttpClientModule
-  ],
+  ]
 
-  providers: [CharactersService] // Adicionamos o CharactersService aos providers
 })
 export class CharactersModule { }
 

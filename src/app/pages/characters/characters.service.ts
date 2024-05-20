@@ -7,12 +7,14 @@ import { PaginationCharacter } from './characters';
   providedIn: 'root'
 })
 export class CharactersService {
-  private apiUrl = 'https://dragonball-api.com/api/characters?limit=5';
 
   constructor(private http: HttpClient) { }
 
-  getCharacters(): Observable<PaginationCharacter> {
-    return this.http.get<PaginationCharacter>(this.apiUrl);
+  getCharacters(): Observable<PaginationCharacter>{
+
+    let url = "https://dragonball-api.com/api/characters?page=2&limit=5";
+    return this.http.get<PaginationCharacter>(url);
   }
 }
+
 

@@ -1,17 +1,13 @@
-<!-- characters-list.component.html -->
+<h1>Lista de Characters</h1>
+<ul *ngFor="let item of paginationCharacter?.items">
+  <li>
+    id: {{item.id}}
+    name: {{item.name}}
+    ki: {{item.ki}}
+    <img [src] = "item.image"/>
 
-<div *ngIf="characters">
-  <ul>
-    <li *ngFor="let character of characters">
-      <img [src]="character.image" alt="{{ character.name }}" style="max-width: 100px; height: auto;">
-      <h2>{{ character.name }}</h2>
-      <p><strong>Raça:</strong> {{ character.race }}</p>
-      <p><strong>Gênero:</strong> {{ character.gender }}</p>
-      <p><strong>Ki:</strong> {{ character.ki }}</p>
-      <p><strong>Máximo de Ki:</strong> {{ character.maxki }}</p>
-      <p>{{ character.description }}</p>
-    </li>
-  </ul>
-</div>
 
-<div *ngIf="!characters">
+  </li>
+</ul>
+
+
