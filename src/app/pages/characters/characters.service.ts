@@ -12,7 +12,7 @@ export class CharactersService {
 
   getCharacters(): Observable<PaginationCharacter>{
 
-    let url = "https://dragonball-api.com/api/characters?page=2&limit=5";
+    let url = "https://dragonball-api.com/api/characters?page=1&limit=5";
     return this.http.get<PaginationCharacter>(url);
   }
 }

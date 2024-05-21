@@ -1,0 +1,50 @@
+/* Estilos gerais */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Estilos para o título */
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 2em;
+  color: #333;
+}
+
+/* Estilos para a lista de planetas */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+/* Estilos para cada item da lista */
+li {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilos para as imagens */
+li img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* Estilos para as informações do planeta */
+li p {
+  margin: 5px 0;
+}
+
+/* Estilos para detalhes adicionais */
+li span {
+  font-weight: bold;
+}

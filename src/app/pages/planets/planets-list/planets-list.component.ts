@@ -1,3 +1,5 @@
+import { PlanetsService } from '../planets.service';
+import { PaginationPlanets } from './../planets';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +9,15 @@ import { Component } from '@angular/core';
 })
 export class PlanetsListComponent {
 
+  PaginationPlanets: PaginationPlanets | undefined;
+
+  private Planets: [] = [];
+
+  constructor (private service: PlanetsService){
+    this.service.getPlanets()
+    .subscribe((dados: PaginationPlanets)=>{
+      console.log(dados);
+      this.PaginationPlanets = dados;
+    })
+  }
 }
